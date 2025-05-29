@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>網頁設計成果報告</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "微軟正黑體", sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+    }
+
+    header h1 {
+      color: #1565c0;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7); /* 透明感 */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1565c0;
+      padding: 15px 20px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      background-color: #bbdefb;
+      border-radius: 8px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #1976d2;
+      border-bottom: 2px solid #90caf9;
+      padding-bottom: 5px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+
+    a {
+      color: #1e88e5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 封面 -->
+  <header>
+    <h1>網頁設計成果報告</h1>
+    <p>課程名稱：網頁設計入門</p>
+    <p>學生姓名：王小明 | 學號：109123456 | 指導老師：李老師</p>
+    <p>日期：2025年5月29日</p>
+  </header>
+
+  <!-- 導覽列 -->
+  <nav>
+    <a href="#showcase" class="active">成果展示</a>
+    <a href="#process">學習過程</a>
+    <a href="#reflection">心得反思</a>
+  </nav>
+
+  <!-- 成果展示 -->
+  <section id="showcase">
+    <h2>成果展示</h2>
+    <p><strong>設計理念：</strong>採用柔和色調與簡約排版，提升可讀性與美觀。</p>
+    <p><strong>功能介紹：</strong></p>
+    <ul>
+      <li>HTML5 結構標籤</li>
+      <li>CSS3 版面與動畫</li>
+      <li>JavaScript 導覽互動效果</li>
+    </ul>
+    <p><strong>技術細節：</strong>使用 Flexbox 排版、Media Query 響應式設計。</p>
+    <img src="project-screenshot.jpg" alt="作品截圖">
+    <p>👉 <a href="https://example.com" target="_blank">點我觀看完整作品</a></p>
+  </section>
+
+  <!-- 學習過程 -->
+  <section id="process">
+    <h2>學習過程</h2>
+    <p>起初學習 HTML 結構困難，但透過課堂練習與實作，我熟悉了標籤應用與網頁架構。</p>
+    <p>在使用 CSS 時，學會排版與調整色彩，並用 JavaScript 增加互動功能。</p>
+    <img src="learning-screenshot.jpg" alt="學習過程截圖">
+  </section>
+
+  <!-- 心得與反思 -->
+  <section id="reflection">
+    <h2>心得與反思</h2>
+    <p>這次課程讓我建立網頁設計的基礎，也學會如何應用設計思維提升使用者體驗。</p>
+    <p>未來希望進一步學習動態網頁開發（如 React、Vue）並結合資料庫應用。</p>
+  </section>
+
+  <!-- JavaScript：導覽列高亮 -->
+  <script>
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
