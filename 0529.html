@@ -27,7 +27,7 @@
       position: sticky;
       top: 0;
       backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.7); /* 透明感 */
+      background: rgba(255, 255, 255, 0.7);
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       display: flex;
       justify-content: center;
@@ -71,6 +71,40 @@
     a {
       color: #1e88e5;
     }
+
+    /* 自我介紹按鈕樣式 */
+    #intro button {
+      margin: 10px 5px;
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #intro button:hover {
+      background-color: #0d47a1;
+    }
+
+    #intro-content {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: #e3f2fd;
+      border-radius: 8px;
+      font-size: 18px;
+      min-height: 60px;
+      transition: all 0.3s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #e3f2fd;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
@@ -79,8 +113,8 @@
   <header>
     <h1>網頁設計成果報告</h1>
     <p>課程名稱：網頁設計入門</p>
-    <p>學生姓名：王小明 | 學號：109123456 | 指導老師：李老師</p>
-    <p>日期：2025年5月29日</p>
+    <p>學生姓名：陳嘉翰 | 學號：5B3G0041 | 指導老師：劉毓芬</p>
+    <p>日期：2025年6月5日</p>
   </header>
 
   <!-- 導覽列 -->
@@ -89,6 +123,28 @@
     <a href="#process">學習過程</a>
     <a href="#reflection">心得反思</a>
   </nav>
+
+  <!-- 自我介紹 -->
+  <section id="intro">
+    <h2>👋 自我介紹</h2>
+    <p>點選下方按鈕，快速了解我是誰：</p>
+    <div>
+      <button onclick="showIntro('who')">我是誰</button>
+      <button onclick="showIntro('hobby')">為什麼我想學網頁設計？	</button>
+      <button onclick="showIntro('skill')">	我的學習目標是什麼？</button>
+    </div>
+    <div id="intro-content">
+      <p>請選擇上方任一項來認識我！</p>
+    </div>
+
+    <!-- IG 連結 -->
+    <div style="margin-top: 30px;">
+      <a href="https://www.instagram.com/7czhki_/?next=%2F" target="_blank" style="text-decoration: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" style="width: 30px; vertical-align: middle;">
+        <span style="margin-left: 8px; font-weight: bold; color: #1565c0;">@7czhki_</span>
+      </a>
+    </div>
+  </section>
 
   <!-- 成果展示 -->
   <section id="showcase">
@@ -120,8 +176,14 @@
     <p>未來希望進一步學習動態網頁開發（如 React、Vue）並結合資料庫應用。</p>
   </section>
 
-  <!-- JavaScript：導覽列高亮 -->
+  <!-- 頁尾 -->
+  <footer>
+    <p>📸 IG：<a href="https://www.instagram.com/你的帳號/" target="_blank">@你的帳號</a></p>
+  </footer>
+
+  <!-- JavaScript -->
   <script>
+    // 導覽列高亮
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -129,6 +191,26 @@
         link.classList.add('active');
       });
     });
+
+    // 自我介紹互動
+    function showIntro(type) {
+      const content = document.getElementById('intro-content');
+      let text = '';
+
+      switch (type) {
+        case 'who':
+          text = '我是陳嘉翰，目前就讀南台科技大學資訊工程系。';
+          break;
+        case 'hobby':
+          text = '寫網頁、打麻將、'
+          break;
+        case 'skill':
+          text = '熟悉 HTML、CSS、JavaScript，並能使用 Figma、Photoshop 等工具進行 UI 設計。';
+          break;
+      }
+
+      content.innerHTML = `<p>${text}</p>`;
+    }
   </script>
 
 </body>
