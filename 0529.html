@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>網頁設計成果報告</title>
   <style>
     body {
       margin: 0;
       font-family: "微軟正黑體", sans-serif;
-      background: #f0f4f8;
-      color: #333;
+      background: #121212;
+      color: #e0e0e0;
     }
 
     header {
       text-align: center;
       padding: 40px 20px;
-      background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+      background: linear-gradient(to bottom, #1f1f1f, #121212);
+      border-bottom: 1px solid #333;
     }
 
     header h1 {
-      color: #1565c0;
+      color: #64b5f6;
       margin-bottom: 10px;
     }
 
@@ -27,49 +28,63 @@
       position: sticky;
       top: 0;
       backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.7);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      background: rgba(20, 20, 20, 0.8);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
+      padding-right: 20px;
       z-index: 100;
     }
 
     nav a {
       text-decoration: none;
-      color: #1565c0;
+      color: #64b5f6;
       padding: 15px 20px;
       font-weight: bold;
       transition: background-color 0.3s, color 0.3s;
     }
 
-    nav a:hover, nav a.active {
-      background-color: #bbdefb;
+    nav a:hover,
+    nav a.active {
+      background-color: #1976d2;
       border-radius: 8px;
+      color: #e0e0e0;
     }
 
     section {
       max-width: 900px;
       margin: 40px auto;
-      background: white;
+      background: #1e1e1e;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+      color: #ccc;
     }
 
     h2 {
-      color: #1976d2;
-      border-bottom: 2px solid #90caf9;
+      color: #64b5f6;
+      border-bottom: 2px solid #1976d2;
       padding-bottom: 5px;
+    }
+
+    h3, h4 {
+      color: #90caf9;
     }
 
     img {
       max-width: 100%;
       border-radius: 6px;
       margin-top: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
     }
 
     a {
-      color: #1e88e5;
+      color: #64b5f6;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #bbdefb;
     }
 
     /* 自我介紹按鈕樣式 */
@@ -92,27 +107,123 @@
     #intro-content {
       margin-top: 25px;
       padding: 20px;
-      background-color: #e3f2fd;
+      background-color: #28343a;
       border-radius: 8px;
       font-size: 18px;
       min-height: 60px;
       transition: all 0.3s ease;
+      color: #e0e0e0;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #e3f2fd;
+      background-color: #1f1f1f;
+      color: #777;
       margin-top: 40px;
+      border-top: 1px solid #333;
+    }
+
+    /* 整體區塊樣式 */
+    #process {
+      background-color: #222;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+      margin: 40px auto;
+      max-width: 900px;
+      font-family: "Noto Sans TC", sans-serif;
+      line-height: 1.8;
+      color: #ccc;
+    }
+
+    /* 標題樣式 */
+    #process h2 {
+      font-size: 28px;
+      color: #64b5f6;
+      border-left: 6px solid #1976d2;
+      padding-left: 12px;
+      margin-bottom: 24px;
+    }
+
+    /* 內文段落 */
+    #process p {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    /* 圖片樣式 */
+    #process img {
+      display: block;
+      margin: 30px auto 0;
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    }
+
+    /* ====== 反思心得區塊新樣式 ====== */
+    #reflection {
+      background: linear-gradient(135deg, #181818 0%, #222 100%);
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      font-family: "Noto Sans TC", sans-serif;
+      color: #ccc;
+      line-height: 1.8;
+      border-left: 6px solid #388e3c;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #reflection h2 {
+      font-size: 28px;
+      color: #66bb6a;
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 35px;
+    }
+
+    /* 標題左側引號裝飾 */
+    #reflection h2::before {
+      content: "❝";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 30px;
+      color: #388e3c;
+      line-height: 1;
+      user-select: none;
+    }
+
+    #reflection p {
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    /* 強調字詞 */
+    #reflection .highlight {
+      color: #66bb6a;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-
   <!-- 封面 -->
   <header>
     <h1>網頁設計成果報告</h1>
-    <p>課程名稱：網頁設計入門</p>
+    <p>課程名稱：基礎網頁設計</p>
     <p>學生姓名：陳嘉翰 | 學號：5B3G0041 | 指導老師：劉毓芬</p>
     <p>日期：2025年6月5日</p>
   </header>
@@ -130,8 +241,8 @@
     <p>點選下方按鈕，快速了解我是誰：</p>
     <div>
       <button onclick="showIntro('who')">我是誰</button>
-      <button onclick="showIntro('hobby')">為什麼我想學網頁設計？	</button>
-      <button onclick="showIntro('skill')">	我的學習目標是什麼？</button>
+      <button onclick="showIntro('hobby')">為什麼我想學網頁設計？</button>
+      <button onclick="showIntro('skill')">我的學習目標是什麼？</button>
     </div>
     <div id="intro-content">
       <p>請選擇上方任一項來認識我！</p>
@@ -140,78 +251,96 @@
     <!-- IG 連結 -->
     <div style="margin-top: 30px;">
       <a href="https://www.instagram.com/7czhki_/?next=%2F" target="_blank" style="text-decoration: none;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" style="width: 30px; vertical-align: middle;">
-        <span style="margin-left: 8px; font-weight: bold; color: #1565c0;">@7czhki_</span>
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" style="width: 30px; vertical-align: middle;" />
+        <span style="margin-left: 8px; font-weight: bold; color: #64b5f6;">@7czhki_</span>
       </a>
     </div>
   </section>
 
-  <!-- 成果展示 -->
   <section id="showcase">
     <h2>成果展示</h2>
-    <p><strong>設計理念：</strong>採用柔和色調與簡約排版，提升可讀性與美觀。</p>
-    <p><strong>功能介紹：</strong></p>
-    <ul>
-      <li>HTML5 結構標籤</li>
-      <li>CSS3 版面與動畫</li>
-      <li>JavaScript 導覽互動效果</li>
-    </ul>
-    <p><strong>技術細節：</strong>使用 Flexbox 排版、Media Query 響應式設計。</p>
-    <img src="project-screenshot.jpg" alt="作品截圖">
-    <p>👉 <a href="https://example.com" target="_blank">點我觀看完整作品</a></p>
-  </section>
 
-  <!-- 學習過程 -->
+   <!-- 作品一 -->
+  <div style="margin-bottom: 60px;">
+    <h3>作品一：CSS BOX Modle 區塊模型</h3>
+    <h4>border邊框、margin/padding外(內)邊框、float文繞圖、vertical-align垂直對齊</h4>
+    <iframe src="https://hankchen0807.github.io/0327/f3.html" 
+            width="100%" 
+            height="1000px" 
+            style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
+    </iframe>
+    <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/0327/f3.html" target="_blank">點我觀看完整作品</a></p>
+  </div>
+
+  <!-- 作品二（範例） -->
+  <div style="margin-bottom: 60px;">
+   <h3>作品二：CSS 文字設定</h3>
+    <h4>精準控制文字的顏色、斜體、粗細、底線、間距</h4>
+    <iframe src="https://hankchen0807.github.io/0430/%E4%BD%9C%E6%A5%AD1.html" 
+            width="100%" 
+            height="1000px" 
+            style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
+    </iframe>
+    <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/0430/%E4%BD%9C%E6%A5%AD1.html" target="_blank">點我觀看完整作品</a></p>
+  </div>
+ <!-- 作品三（範例） -->
+  <div style="margin-bottom: 60px;">
+   <h3>作品三：CSS選擇器[玫瑰花術語] </h3>
+    <h4>背景、漸層、濾鏡</h4>
+    <iframe src="https://hankchen0807.github.io/0410/%E4%BD%9C%E6%A5%AD1.html" 
+            width="100%" 
+            height="1000px" 
+            style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
+    </iframe>
+    <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/0410/%E4%BD%9C%E6%A5%AD1.html" target="_blank">點我觀看完整作品</a></p>
+  </div>
+<!-- 作品四（範例） -->
+  <div style="margin-bottom: 60px;">
+   <h3>作品四：回應式網頁 </h3>
+    <h4>背景、漸層、濾鏡</h4>
+    <iframe src="https://hankchen0807.github.io/05080000/rwd-layout.html" 
+            width="100%" 
+            height="1000px" 
+            style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
+    </iframe>
+    <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/05080000/rwd-layout.html" target="_blank">點我觀看完整作品</a></p>
+  </div>
+</section>
+
   <section id="process">
-    <h2>學習過程</h2>
-    <p>起初學習 HTML 結構困難，但透過課堂練習與實作，我熟悉了標籤應用與網頁架構。</p>
-    <p>在使用 CSS 時，學會排版與調整色彩，並用 JavaScript 增加互動功能。</p>
-    <img src="learning-screenshot.jpg" alt="學習過程截圖">
+    <h2>學習過程分享</h2>
+    <p>網頁設計的過程充滿挑戰與樂趣。從學習HTML的結構開始，到深入CSS的排版與動畫效果，每一步都讓我感受到創作的魅力。</p>
+    <p>我透過網路資源、自學影片與實際操作，不斷調整與測試，終於完成了多個作品，並能夠靈活應用各種技巧。</p>
+    <img src="https://picsum.photos/800/400?grayscale" alt="學習過程圖片" />
   </section>
 
-  <!-- 心得與反思 -->
   <section id="reflection">
-    <h2>心得與反思</h2>
-    <p>這次課程讓我建立網頁設計的基礎，也學會如何應用設計思維提升使用者體驗。</p>
-    <p>未來希望進一步學習動態網頁開發（如 React、Vue）並結合資料庫應用。</p>
+    <h2>心得反思</h2>
+    <p>這次學習網頁設計讓我收穫良多。過程中遇到許多挑戰，特別是在排版與動畫效果的調整上，需要耐心與細心。</p>
+    <p>我認為持續練習與實作是最有效的學習方式，未來也希望能將所學應用於實際專案，提升自己的專業技能。</p>
   </section>
 
-  <!-- 頁尾 -->
   <footer>
-    <p>📸 IG：<a href="https://www.instagram.com/你的帳號/" target="_blank">@你的帳號</a></p>
+    <p> &copy; 2025 陳嘉翰</p>
   </footer>
 
-  <!-- JavaScript -->
   <script>
-    // 導覽列高亮
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-
-    // 自我介紹互動
-    function showIntro(type) {
-      const content = document.getElementById('intro-content');
-      let text = '';
-
-      switch (type) {
-        case 'who':
-          text = '我是陳嘉翰，目前就讀南台科技大學資訊工程系。';
+    function showIntro(topic) {
+      const content = document.getElementById("intro-content");
+      switch(topic) {
+        case "who":
+          content.innerHTML = "<p>你好，我是陳嘉翰，目前就讀大學，對網頁設計充滿熱情，喜歡創造美觀且實用的網頁。</p>";
           break;
-        case 'hobby':
-          text = '寫網頁、打麻將、'
+        case "hobby":
+          content.innerHTML = "<p>我喜歡攝影和旅遊，透過網頁設計分享我的作品和旅行故事，希望帶給大家視覺上的享受。</p>";
           break;
-        case 'skill':
-          text = '熟悉 HTML、CSS、JavaScript，並能使用 Figma、Photoshop 等工具進行 UI 設計。';
+        case "skill":
+          content.innerHTML = "<p>我希望掌握HTML、CSS、JavaScript等技能，能夠獨立製作響應式網站，並不斷學習新技術。</p>";
           break;
+        default:
+          content.innerHTML = "<p>請選擇上方任一項來認識我！</p>";
       }
-
-      content.innerHTML = `<p>${text}</p>`;
     }
   </script>
-
 </body>
 </html>
