@@ -14,14 +14,24 @@
 
     header {
       text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(to bottom, #1f1f1f, #121212);
-      border-bottom: 1px solid #333;
+      padding: 80px 20px;
+      background: linear-gradient(145deg, #1a237e, #0d47a1);
+      border-bottom: 2px solid #64b5f6;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+      color: #e3f2fd;
     }
 
     header h1 {
-      color: #64b5f6;
-      margin-bottom: 10px;
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    header p {
+      font-size: 20px;
+      margin: 8px 0;
+      color: #bbdefb;
     }
 
     nav {
@@ -87,44 +97,6 @@
       color: #bbdefb;
     }
 
-    /* 自我介紹按鈕樣式 */
-    #intro button {
-      margin: 10px 5px;
-      padding: 10px 20px;
-      background-color: #1976d2;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    #intro button:hover {
-      background-color: #0d47a1;
-    }
-
-    #intro-content {
-      margin-top: 25px;
-      padding: 20px;
-      background-color: #28343a;
-      border-radius: 8px;
-      font-size: 18px;
-      min-height: 60px;
-      transition: all 0.3s ease;
-      color: #e0e0e0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1f1f1f;
-      color: #777;
-      margin-top: 40px;
-      border-top: 1px solid #333;
-    }
-
-    /* 整體區塊樣式 */
     #process {
       background-color: #222;
       padding: 40px 20px;
@@ -137,7 +109,6 @@
       color: #ccc;
     }
 
-    /* 標題樣式 */
     #process h2 {
       font-size: 28px;
       color: #64b5f6;
@@ -146,13 +117,11 @@
       margin-bottom: 24px;
     }
 
-    /* 內文段落 */
     #process p {
       margin-bottom: 16px;
       text-align: justify;
     }
 
-    /* 圖片樣式 */
     #process img {
       display: block;
       margin: 30px auto 0;
@@ -161,7 +130,33 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
     }
 
-    /* ====== 反思心得區塊新樣式 ====== */
+    #notes {
+      background-color: #1b1b1b;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      border-left: 6px solid #ffb74d;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+      color: #f0e68c;
+      font-family: "Noto Sans TC", sans-serif;
+    }
+
+    #notes h2 {
+      font-size: 28px;
+      color: #ffcc80;
+      margin-bottom: 20px;
+    }
+
+    #notes ul {
+      padding-left: 20px;
+    }
+
+    #notes li {
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
     #reflection {
       background: linear-gradient(135deg, #181818 0%, #222 100%);
       padding: 40px 20px;
@@ -195,7 +190,6 @@
       padding-left: 35px;
     }
 
-    /* 標題左側引號裝飾 */
     #reflection h2::before {
       content: "❝";
       position: absolute;
@@ -212,14 +206,23 @@
       text-align: justify;
     }
 
-    /* 強調字詞 */
     #reflection .highlight {
       color: #66bb6a;
       font-weight: bold;
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1f1f1f;
+      color: #777;
+      margin-top: 40px;
+      border-top: 1px solid #333;
+    }
   </style>
 </head>
 <body>
+
   <!-- 封面 -->
   <header>
     <h1>網頁設計成果報告</h1>
@@ -235,78 +238,56 @@
     <a href="#reflection">心得反思</a>
   </nav>
 
-  <!-- 自我介紹 -->
-  <section id="intro">
-    <h2>👋 自我介紹</h2>
-    <p>點選下方按鈕，快速了解我是誰：</p>
-    <div>
-      <button onclick="showIntro('who')">我是誰</button>
-      <button onclick="showIntro('hobby')">為什麼我想學網頁設計？</button>
-      <button onclick="showIntro('skill')">我的學習目標是什麼？</button>
-    </div>
-    <div id="intro-content">
-      <p>請選擇上方任一項來認識我！</p>
-    </div>
-
-    <!-- IG 連結 -->
-    <div style="margin-top: 30px;">
-      <a href="https://www.instagram.com/7czhki_/?next=%2F" target="_blank" style="text-decoration: none;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" style="width: 30px; vertical-align: middle;" />
-        <span style="margin-left: 8px; font-weight: bold; color: #64b5f6;">@7czhki_</span>
-      </a>
-    </div>
-  </section>
-
   <section id="showcase">
     <h2>成果展示</h2>
+  
+    <div style="margin-bottom: 60px;">
+      <h3>作品一：CSS BOX Model 區塊模型</h3>
+      <h4>border邊框、margin/padding外(內)邊距、float文繞圖、vertical-align垂直對齊</h4>
+      <iframe src="https://hankchen0807.github.io/0327/f3.html" 
+              width="100%" 
+              height="1000px" 
+              style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
+      </iframe>
+      <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/0327/f3.html" target="_blank">點我觀看完整作品</a></p>
+    </div>
+  
+    <div style="margin-bottom: 60px;">
+      <h3>作品二：CSS 文字設定</h3>
+      <h4>精準控制文字的顏色、斜體、粗細、底線、間距</h4>
+      <iframe src="https://hankchen0807.github.io/0430/%E4%BD%9C%E6%A5%AD1.html" 
+              width="100%" 
+              height="1000px" 
+              style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
+      </iframe>
+      <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/0430/%E4%BD%9C%E6%A5%AD1.html" target="_blank">點我觀看完整作品</a></p>
+    </div>
+  
+    <div style="margin-bottom: 60px;">
+      <h3>作品三：CSS 選擇器（玫瑰花術語）</h3>
+      <h4>背景、漸層、濾鏡效果</h4>
+      <iframe src="https://hankchen0807.github.io/0410/%E4%BD%9C%E6%A5%AD1.html" 
+              width="100%" 
+              height="1000px" 
+              style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
+      </iframe>
+      <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/0410/%E4%BD%9C%E6%A5%AD1.html" target="_blank">點我觀看完整作品</a></p>
+    </div>
+  
+    <div style="margin-bottom: 60px;">
+      <h3>作品四：回應式網頁 RWD</h3>
+      <h4>結合背景、漸層與彈性排版設計</h4>
+      <iframe src="https://hankchen0807.github.io/05080000/rwd-layout.html" 
+              width="100%" 
+              height="1000px" 
+              style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
+      </iframe>
+      <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/05080000/rwd-layout.html" target="_blank">點我觀看完整作品</a></p>
+    </div>
+  </section>
+  
 
-   <!-- 作品一 -->
-  <div style="margin-bottom: 60px;">
-    <h3>作品一：CSS BOX Modle 區塊模型</h3>
-    <h4>border邊框、margin/padding外(內)邊框、float文繞圖、vertical-align垂直對齊</h4>
-    <iframe src="https://hankchen0807.github.io/0327/f3.html" 
-            width="100%" 
-            height="1000px" 
-            style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
-    </iframe>
-    <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/0327/f3.html" target="_blank">點我觀看完整作品</a></p>
-  </div>
-
-  <!-- 作品二（範例） -->
-  <div style="margin-bottom: 60px;">
-   <h3>作品二：CSS 文字設定</h3>
-    <h4>精準控制文字的顏色、斜體、粗細、底線、間距</h4>
-    <iframe src="https://hankchen0807.github.io/0430/%E4%BD%9C%E6%A5%AD1.html" 
-            width="100%" 
-            height="1000px" 
-            style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
-    </iframe>
-    <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/0430/%E4%BD%9C%E6%A5%AD1.html" target="_blank">點我觀看完整作品</a></p>
-  </div>
- <!-- 作品三（範例） -->
-  <div style="margin-bottom: 60px;">
-   <h3>作品三：CSS選擇器[玫瑰花術語] </h3>
-    <h4>背景、漸層、濾鏡</h4>
-    <iframe src="https://hankchen0807.github.io/0410/%E4%BD%9C%E6%A5%AD1.html" 
-            width="100%" 
-            height="1000px" 
-            style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
-    </iframe>
-    <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/0410/%E4%BD%9C%E6%A5%AD1.html" target="_blank">點我觀看完整作品</a></p>
-  </div>
-<!-- 作品四（範例） -->
-  <div style="margin-bottom: 60px;">
-   <h3>作品四：回應式網頁 </h3>
-    <h4>背景、漸層、濾鏡</h4>
-    <iframe src="https://hankchen0807.github.io/05080000/rwd-layout.html" 
-            width="100%" 
-            height="1000px" 
-            style="border:none; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
-    </iframe>
-    <p style="margin-top:10px;">👉 <a href="https://hankchen0807.github.io/05080000/rwd-layout.html" target="_blank">點我觀看完整作品</a></p>
-  </div>
-</section>
-
+  <!-- 學習過程 -->
   <section id="process">
     <h2>學習過程分享</h2>
     <p>網頁設計的過程充滿挑戰與樂趣。從學習HTML的結構開始，到深入CSS的排版與動畫效果，每一步都讓我感受到創作的魅力。</p>
@@ -314,6 +295,19 @@
     <img src="https://picsum.photos/800/400?grayscale" alt="學習過程圖片" />
   </section>
 
+  <!-- 課程筆記 -->
+  <section id="notes">
+    <h2>課程重點筆記</h2>
+    <ul>
+      <li><strong>HTML 結構：</strong>包含 head、body、header、footer、section 等基本標籤。</li>
+      <li><strong>CSS 選擇器：</strong>ID (#)、類別 (.)、元素選擇器、群組與巢狀選擇器。</li>
+      <li><strong>排版技巧：</strong>使用 flexbox 或 grid 進行版面配置，掌握 float 和 clear 的運用。</li>
+      <li><strong>RWD 響應式設計：</strong>利用 @media 查詢讓網頁在不同裝置上自動調整。</li>
+      <li><strong>網頁美化：</strong>使用 box-shadow、border-radius、背景漸層、hover 效果增強視覺吸引力。</li>
+    </ul>
+  </section>
+
+  <!-- 心得反思 -->
   <section id="reflection">
     <h2>心得反思</h2>
     <p>這次學習網頁設計讓我收穫良多。過程中遇到許多挑戰，特別是在排版與動畫效果的調整上，需要耐心與細心。</p>
@@ -321,26 +315,7 @@
   </section>
 
   <footer>
-    <p> &copy; 2025 陳嘉翰</p>
+    <p>&copy; 2025 陳嘉翰</p>
   </footer>
-
-  <script>
-    function showIntro(topic) {
-      const content = document.getElementById("intro-content");
-      switch(topic) {
-        case "who":
-          content.innerHTML = "<p>你好，我是陳嘉翰，目前就讀大學，對網頁設計充滿熱情，喜歡創造美觀且實用的網頁。</p>";
-          break;
-        case "hobby":
-          content.innerHTML = "<p>我喜歡攝影和旅遊，透過網頁設計分享我的作品和旅行故事，希望帶給大家視覺上的享受。</p>";
-          break;
-        case "skill":
-          content.innerHTML = "<p>我希望掌握HTML、CSS、JavaScript等技能，能夠獨立製作響應式網站，並不斷學習新技術。</p>";
-          break;
-        default:
-          content.innerHTML = "<p>請選擇上方任一項來認識我！</p>";
-      }
-    }
-  </script>
 </body>
 </html>
